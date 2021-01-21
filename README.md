@@ -1,10 +1,13 @@
 # Tickr Carbon Offsetting Challenge.
 
 ##Installation
+
 ####Using Docker
+
 ######Requirements
 1. Docker version 20.10.2
 2. docker-compose version 1.27.4, build 40524192
+
 ######How to run & test
 ```bash
 # Pull and Build all images and run the containers
