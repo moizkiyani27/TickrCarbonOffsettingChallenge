@@ -17,6 +17,16 @@ OR
 docker run --rm --interactive --tty --volume $PWD/api:/app composer install
 ```
 
+**To create ````.env``` file**
+```bash
+docker run --rm --interactive --tty --volume {%cd%|$PWD}/api:/app composer run-script post-root-package-install
+```
+
+**To generate key file**
+```bash
+docker run --rm --interactive --tty --volume {%cd%|$PWD}/api:/app composer run-script post-create-project-cmd
+```
+
 ```bash
 # Pull and Build all images and run the containers
 docker-compose up -d
@@ -31,10 +41,7 @@ http://localhost/api/carbon-offset-schedule?subscriptionStartDate={YYYY-MM-DD}&s
 **Unit-Testing**
 ```bash
 # goto php-fpm container sh
-docker-compose exec php-fpm sh
-/application # cd api
-# To Run UnitTests
-/application/api # ./vendor/bin/phpunit
+docker-compose exec php-fpm ./vendor/bin/phpunit
 
 ```
 #### Using Composer
