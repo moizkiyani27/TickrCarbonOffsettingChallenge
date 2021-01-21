@@ -4,24 +4,24 @@ services:
     image: nginx:alpine
     container_name: webserver
     working_dir: /application
+    depends_on:
+      php-fpm:
+        condition: service_started
     volumes:
-     - .:/application
-     - ./docker/nginx/conf.d/nginx.conf:/etc/nginx/conf.d/default.conf
+      - .:/application
+      - ./docker/nginx/conf.d/nginx.conf:/etc/nginx/conf.d/default.conf
     ports:
-     - "80:80"
+      - "80:80"
 
   php-fpm:
     image: php:fpm-alpine
     container_name: php-fpm
-    working_dir: /application
+    working_dir: /application/api
     tty: true
+    healthcheck:
+      test: ["CMD", "./vendor/bin/phpunit"]
     environment:
       SERVICE_NAME: app
       SERVICE_TAGS: dev
     volumes:
       - .:/application
-  composer:
-    image: composer:latest
-    command: ["composer", "install"]
-    volumes:
-      - ./api:/app
