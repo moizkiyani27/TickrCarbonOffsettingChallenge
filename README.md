@@ -1,6 +1,11 @@
 # Tickr Carbon Offsetting Challenge.
 
 ## Installation
+There are two methods to run & test the script
+1. Using Docker
+2. Using Composer
+Requirements and commands to run in either are given below.
+
 ## Using Docker
 ###### Requirements
 1. Docker version 20.10.2
