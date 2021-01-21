@@ -21,14 +21,17 @@ http://localhost/api/carbon-offset-schedule?subscriptionStartDate={YYYY-MM-DD}&s
 ```
 
 **Unit-Testing**
+***goto php-fpm container sh***
 ```bash
-# goto php-fpm container sh
 docker-compose exec php-fpm sh
-/application # cd api
-# To Run UnitTests
-/application/api # ./vendor/bin/phpunit
-
 ```
+
+***To Run UnitTests***
+```bash
+/application # cd api
+/application/api # ./vendor/bin/phpunit
+```
+
 #### Using Composer
 ###### Requirements
 1. php version 7.3|8.0
@@ -36,11 +39,14 @@ docker-compose exec php-fpm sh
 
 ###### How to run & test
 Go to directory ```api``` and run following commands
-```bash
-# Install all dependencies
-composer install
 
-# Run the script
+***Install all dependencies***
+```bash
+composer install
+```
+
+***Run the script***
+```bash
 php artisan serve
 ```
 **URI Format to test in Browser**
@@ -50,7 +56,6 @@ http://localhost:8000/api/carbon-offset-schedule?subscriptionStartDate={YYYY-MM-
 
 **Unit-Testing**
 ```bash
-# To Run UnitTests
 ./vendor/bin/phpunit
 
 ```
