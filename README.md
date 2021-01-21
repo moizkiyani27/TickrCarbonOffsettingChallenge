@@ -1,7 +1,7 @@
 # Tickr Carbon Offsetting Challenge.
 
 ## Installation
-#### Using Docker
+## Using Docker
 ###### Requirements
 1. Docker version 20.10.2
 2. docker-compose version 1.27.4, build 40524192
@@ -44,7 +44,7 @@ http://localhost/api/carbon-offset-schedule?subscriptionStartDate={YYYY-MM-DD}&s
 docker-compose exec php-fpm ./vendor/bin/phpunit
 
 ```
-#### Using Composer
+## Using Composer
 ###### Requirements
 1. php version 7.3|8.0
 2. composer version 2.0.8
