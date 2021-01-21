@@ -4,6 +4,7 @@
 There are two methods to run & test the script
 1. Using Docker
 2. Using Composer
+
 Requirements and commands to run in either are given below.
 
 ## Using Docker
